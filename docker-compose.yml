@@ -5,5 +5,9 @@ services:
         container_name: php
         build: ./docker/php
         volumes:
-            - ${SOURCE_PATH:-./src}:/var/www
-    
+            - ${SOURCE_PATH:-./src}:/var/www/html
+    composer:
+        container_name: composer
+        build: ./docker/composer
+        volumes:
+            - ${SOURCE_PATH:-./src}:/src
