@@ -1,5 +1,5 @@
-FROM php:7.2-fpm
+FROM php:7.3-fpm
 COPY php.ini /usr/local/etc/php
 
-RUN apt-get update \
-    && docker-php-ext-install pdo_mysql;
+RUN apt-get update
+RUN docker-php-ext-install bcmath pdo_mysql
