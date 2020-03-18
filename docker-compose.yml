@@ -14,10 +14,11 @@ services:
         build: ./docker/composer
         volumes:
             - ${SOURCE_PATH:-./src}:/src
-    npm:
-        container_name: npm
-        build: ./docker/npm
-
+    node:
+        container_name: node 
+        build: ./docker/node
+        volumes:
+            - ${SOURCE_PATH:-./src}:/src
     db:
         image: mysql:5.7
         container_name: db
